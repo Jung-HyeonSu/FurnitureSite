@@ -1,0 +1,29 @@
+.box__top.box__top--visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+ .box__top {
+    position: fixed;
+    right: 0;
+    bottom: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s linear;
+    z-index: 100;
+}
+.sprite__common:hover{
+    transform: scale(1.3);
+    transition: .5s;
+}
+.box__top .link__top .sprite__common {
+    width: 80px;
+    height: 80px;
+    background-position: 0 -324px;
+}
+.sprite__common, .sprite__common--after:after, .sprite__common--before:before {
+    display: inline-block;
+    background: url(//pics.gmarket.co.kr/pc/sprite/kr/common/sprite__common.png) no-repeat;
+    background-size: 400px auto;
+    text-indent: -9999px;
+}

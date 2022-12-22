@@ -1,0 +1,178 @@
+ /* CSS 부분 */
+
+    /* 카테고리 부분*/
+
+    ul li{ /*ul li 태그 리스트 스타일 제거*/
+		list-style: none;
+	}
+
+    #menu a { /*a태그에 텍스트 밑줄 없애고 색상 지정*/
+		text-decoration: none;
+		color:rgb(255, 255, 255);
+	}
+    #menu { /*메뉴 설정*/
+		color : white;
+		font:bold 16px "malgun gothic";
+		line-height: 50px; 
+		text-align: center;
+        position: fixed;
+	    top: 0;
+	    background-color: rgba(0, 0, 0, 0.8);
+	    -webkit-backdrop-filter: blur(8px);
+  	    backdrop-filter: blur(8px);
+	    z-index: 999;
+	    height: 3rem;
+	    width: 100%;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+	}
+	#menu a:hover{
+		color: pink;
+	}
+
+    #menu > ul > li { /*메뉴 태그 자식 설정*/
+		float:left;
+		width:14.28%;
+		position:relative;
+	}
+
+    #menu > ul > li > ul { /*하위 메뉴가 보이지 않도록 설정.*/
+		width:100%;
+		display:none;
+		position: absolute;
+		font-size:14px;
+		background: rgb(88, 88, 88);
+	}
+
+    #menu > ul > li:hover > ul { /*마우스를 올릴 시 보이도록 */
+		display:block;
+	}
+
+    #menu > ul > li > ul > li:hover { /*리스트 커서 위치시 색깔*/
+		background: rgb(30, 109, 56);
+		transition: ease 1s;
+	}	
+
+
+
+
+	/*main.jsp 이미지*/
+	
+	* {
+		margin: 0;
+		padding:0;
+		box-sizing: border-box;
+	}
+	ul, li{
+		list-style: none;
+	}
+	[name="slide"] {
+		display: none;
+	}
+	.slidebox{
+		width: 100%;
+		height: 700px;
+		position: relative;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.slidebox img {
+		max-width: 100%;
+	}
+	.slidebox .slidelist {
+		white-space: nowrap;
+		font-size: 0;
+		overflow: hidden;
+	}
+	.slidebox .slideitem {
+		position:relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		transition: all .35s;
+	}
+	.slidebox .slideitem label{
+		position:absolute;
+		z-index: 1;
+		top: 50%;
+		transform: translateY(-50%);
+		padding:20px;
+		border-radius:50%;
+		cursor:pointer;
+	}
+	label.left{
+		left: 50px;
+		background-color: #5f5f5f00;
+		background-image: url('../EventImg/main_left.png');
+		background-position: center center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	label.right{
+		right: 50px;
+		background-color: #5f5f5f00;
+		background-image: url('../EventImg/main_right.png');
+		background-position: center center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	[id="slide01"]:checked ~ .slidelist .slideitem {
+		transform:translateX(0);
+		animation: slide01 23s infinite;
+	}
+	[id="slide02"]:checked ~ .slidelist .slideitem {
+		transform:translateX(-100%);
+		animation: slide02 23s infinite;
+	}
+	[id="slide03"]:checked ~ .slidelist .slideitem {
+		transform:translateX(-200%);
+		animation: slide03 23s infinite;
+	}
+	[id="slide04"]:checked ~ .slidelist .slideitem {
+		transform:translateX(-300%);
+		animation: slide04 23s infinite;
+	}
+	@keyframes slide01 {
+		0% {left:0%;}
+		23% {left:0%;}
+		25% {left:-100%;}
+		48% {left:-100%;}
+		50% {left:-200%;}
+		73% {left:-200%;}
+		75% {left:-300%;}
+		98% {left:-300%;}
+		100% {left:0%;}
+	}
+	@keyframes slide02 {
+		0% {left:0%;}
+		23% {left:0%;}
+		25% {left:-100%;}
+		48% {left:-100%;}
+		50% {left:-200%;}
+		73% {left:-200%;}
+		75% {left:100%;}
+		98% {left:100%;}
+		100% {left:0%;}
+	}
+	@keyframes slide03 {
+		0% {left:0%;}
+		23% {left:0%;}
+		25% {left:-100%;}
+		48% {left:-100%;}
+		50% {left:200%;}
+		73% {left:200%;}
+		75% {left:100%;}
+		98% {left:100%;}
+		100% {left:0%;}
+	}
+	@keyframes slide04 {
+		0% {left:0%;}
+		23% {left:0%;}
+		25% {left:300%;}
+		48% {left:300%;}
+		50% {left:200%;}
+		73% {left:200%;}
+		75% {left:100%;}
+		98% {left:100%;}
+		100% {left:0%;}
+	}
